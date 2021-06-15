@@ -10,6 +10,7 @@ struct Person {
     let surname: String
     let email: String
     let phone: String
+    let photo: String
     
     var fullname: String {
         "\(surname) \(name)"
@@ -17,10 +18,11 @@ struct Person {
 }
 
 class DataManager {
-    var arrayOfName: [String] = ["Klark", "Alexandr", "Lev"]
-    var arrayOfSurname: [String] = ["Smith", "Pauls", "Ivanov"]
-    var arrayOfEmail: [String] = ["123@mail.ru", "456@mail.ru", "789@mail.ru"]
-    var arrayOfPhone: [String] = ["75-30-82", "889-33-25", "26-02-22"]
+    var arrayOfName: [String] = ["Klark", "Alexandr", "Lev", "James", "Oleg", "Adam"]
+    var arrayOfSurname: [String] = ["Smith", "Pauls", "Ivanov", "Batchelor", "Wilson", "Astashenko"]
+    var arrayOfEmail: [String] = ["strawberry@mail.ru", "just_smile@yandex.ru", "1.2.3.4.5@mail.ru", "bond77@mail.ru", "capitan45@mail.ru", "men-u@gmail.com"]
+    var arrayOfPhone: [String] = ["75-30-82", "889-33-25", "26-02-22", "7-332-62-22", "55-43-11" ,"111-22-33"]
+    var arrayOfPhoto: [String] = ["person 1", "person 2", "person 3", "person 4", "person 5", "person 6"]
 }
 
 extension Person {
@@ -46,10 +48,15 @@ extension Person {
             if let index = dataManager.arrayOfPhone.firstIndex(of: randomPhone) {
                 dataManager.arrayOfPhone.remove(at: index)
             }
+            let randomPhoto = dataManager.arrayOfPhoto.randomElement() ?? ""
+            if let index = dataManager.arrayOfPhoto.firstIndex(of: randomPhoto) {
+                dataManager.arrayOfPhoto.remove(at: index)
+            }
             
-            let newPerson = Person(name: randomName, surname: randomSurname, email: randomEmail, phone: randomPhone)
+            let newPerson = Person(name: randomName, surname: randomSurname, email: randomEmail, phone: randomPhone, photo: randomPhoto)
             personList.append(newPerson)
         }
         return personList
     }
 }
+

@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8KS-jG-H1s">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,12 +37,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" id="SsP-gi-Dax">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="7" reuseIdentifier="personCell" textLabel="lse-3S-3Wm" style="IBUITableViewCellStyleDefault" id="SsP-gi-Dax">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SsP-gi-Dax" id="Q5D-IL-gfb">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lse-3S-3Wm">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -104,47 +115,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="GUB-m7-Vnu">
-                                <rect key="frame" x="20" y="140" width="374" height="71"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Qv-jg-qad">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GUB-m7-Vnu">
+                                <rect key="frame" x="30" y="362" width="354" height="57"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rad-FR-HDt">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
-                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jle-LU-U1a">
-                                        <rect key="frame" x="0.0" y="43" width="374" height="28"/>
-                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="33.5" width="354" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uPR-O2-g2Q">
+                                <rect key="frame" x="113.5" y="108" width="187" height="224"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uPR-O2-g2Q" secondAttribute="height" multiplier="15:18" id="xd6-NU-Fbz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="06o-qQ-yTo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GUB-m7-Vnu" firstAttribute="leading" secondItem="06o-qQ-yTo" secondAttribute="leading" constant="20" id="42M-X0-QKD"/>
-                            <constraint firstItem="GUB-m7-Vnu" firstAttribute="top" secondItem="06o-qQ-yTo" secondAttribute="top" id="ElS-yq-9zI"/>
-                            <constraint firstItem="06o-qQ-yTo" firstAttribute="trailing" secondItem="GUB-m7-Vnu" secondAttribute="trailing" constant="20" id="yyV-0j-H1k"/>
+                            <constraint firstItem="GUB-m7-Vnu" firstAttribute="leading" secondItem="06o-qQ-yTo" secondAttribute="leading" constant="30" id="42M-X0-QKD"/>
+                            <constraint firstItem="06o-qQ-yTo" firstAttribute="trailing" secondItem="5Qv-jg-qad" secondAttribute="trailing" id="HYD-Hr-tvS"/>
+                            <constraint firstItem="uPR-O2-g2Q" firstAttribute="top" secondItem="06o-qQ-yTo" secondAttribute="top" constant="20" id="LCz-We-Dvn"/>
+                            <constraint firstItem="5Qv-jg-qad" firstAttribute="leading" secondItem="06o-qQ-yTo" secondAttribute="leading" id="X27-fQ-em0"/>
+                            <constraint firstItem="uPR-O2-g2Q" firstAttribute="height" secondItem="aq9-rp-TPp" secondAttribute="height" multiplier="0.25" id="Zfb-aX-jJR"/>
+                            <constraint firstItem="06o-qQ-yTo" firstAttribute="bottom" secondItem="5Qv-jg-qad" secondAttribute="bottom" id="caW-Lk-2hT"/>
+                            <constraint firstItem="uPR-O2-g2Q" firstAttribute="centerX" secondItem="06o-qQ-yTo" secondAttribute="centerX" id="h6C-LE-0ks"/>
+                            <constraint firstItem="GUB-m7-Vnu" firstAttribute="top" secondItem="uPR-O2-g2Q" secondAttribute="bottom" constant="30" id="iws-ow-SCs"/>
+                            <constraint firstItem="5Qv-jg-qad" firstAttribute="top" secondItem="06o-qQ-yTo" secondAttribute="top" id="rFZ-Ug-Y3P"/>
+                            <constraint firstItem="06o-qQ-yTo" firstAttribute="trailing" secondItem="GUB-m7-Vnu" secondAttribute="trailing" constant="30" id="yyV-0j-H1k"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Mj2-xi-SWb"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Mj2-xi-SWb"/>
                     <connections>
+                        <outlet property="backgroundImage" destination="5Qv-jg-qad" id="qR7-ax-Eze"/>
                         <outlet property="labelPersonEmail" destination="rad-FR-HDt" id="gnp-cU-ocd"/>
                         <outlet property="labelPersonPhone" destination="jle-LU-U1a" id="iXj-BA-R3o"/>
+                        <outlet property="personImage" destination="uPR-O2-g2Q" id="EIc-h1-d06"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EdV-Dq-v44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1825" y="-326"/>
+            <point key="canvasLocation" x="1824.6376811594205" y="-326.11607142857139"/>
         </scene>
-        <!--Start Page-->
+        <!--Persons-->
         <scene sceneID="EZE-Qb-hxj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zDU-Lg-YZM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Start Page" id="jfX-kN-eCD"/>
+                    <tabBarItem key="tabBarItem" title="Persons" id="jfX-kN-eCD">
+                        <imageReference key="image" image="person" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="JNe-K9-bKj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="PW3-q9-234">
@@ -160,11 +191,11 @@
             </objects>
             <point key="canvasLocation" x="218.84057971014494" y="-326.11607142857139"/>
         </scene>
-        <!--Person List-->
+        <!--Contact List-->
         <scene sceneID="ue8-Lk-ocI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FUQ-76-ily" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Person List" id="3Mr-oc-Ht2"/>
+                    <tabBarItem key="tabBarItem" title="Contact List" image="list.bullet.indent" catalog="system" id="3Mr-oc-Ht2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9C3-Jh-6R0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -181,6 +212,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="list.bullet.indent" catalog="system" width="128" height="74"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
