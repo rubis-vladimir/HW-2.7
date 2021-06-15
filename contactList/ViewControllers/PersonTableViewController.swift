@@ -17,30 +17,12 @@ class PersonTableViewController: UITableViewController, UITabBarControllerDelega
     }
 }
 
-/// Mark: UITableViewDelegate
 extension PersonTableViewController {
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        .insert
-    }
+    // MARK: - Table view data source
     
-    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
-        false
-    }
-    
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let currentPerson = personList.remove(at: sourceIndexPath.row)
-        personList.insert(currentPerson, at: destinationIndexPath.row)
-    }
-}
-
-extension PersonTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         personList.count
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        40
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,10 +34,32 @@ extension PersonTableViewController {
         cell.contentConfiguration = content
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let currentPerson = personList.remove(at: sourceIndexPath.row)
+        personList.insert(currentPerson, at: destinationIndexPath.row)
+    }
+    
+    // MARK:  - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        40
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .insert
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        false
+    }
+    
 }
 
-//Mark: - Navigation actions
+
 extension PersonTableViewController: UITabBarDelegate {
+    
+    // MARK: - Navigation actions
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         

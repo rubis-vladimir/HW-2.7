@@ -8,31 +8,12 @@
 import UIKit
 
 class PersonListViewController: UITableViewController {
-    
     var personList: [Person]!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
 }
 
 extension PersonListViewController {
-    
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        .insert
-    }
-    
-    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
-        false
-    }
-    
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let currentPerson = personList.remove(at: sourceIndexPath.row)
-        personList.insert(currentPerson, at: destinationIndexPath.row)
-    }
-}
-
-extension PersonListViewController {
+   
+    // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         personList.count
@@ -40,10 +21,6 @@ extension PersonListViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         2
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        30
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,16 +36,34 @@ extension PersonListViewController {
         personList[section].fullname
     }
     
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let currentPerson = personList.remove(at: sourceIndexPath.row)
+        personList.insert(currentPerson, at: destinationIndexPath.row)
+    }
+    
+    // MARK:  - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        30
+    }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         30
     }
-
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .insert
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        false
+    }
+    
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let headerView = view as! UITableViewHeaderFooterView
         headerView.textLabel?.textColor = UIColor.orange
         headerView.textLabel?.textAlignment = .center
         headerView.textLabel?.font = UIFont(name: "Avenir", size: 20.0)
-        
     }
 }
 
