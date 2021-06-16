@@ -23,6 +23,7 @@ class DetailPersonViewController: UIViewController {
         labelPersonEmail.text = person.email
         labelPersonPhone.text = person.phone
         personImage.image = UIImage(named: person.photo ?? "")
+        personImage.layer.borderWidth = 6
     }
     
 

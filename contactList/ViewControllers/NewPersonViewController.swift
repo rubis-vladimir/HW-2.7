@@ -47,7 +47,7 @@ class NewPersonViewController: UITableViewController {
                            surname: personSurname.text,
                            email: personEmail.text,
                            phone: personPhone.text,
-                           photo: nil)
+                           photo: "Plug")
     }
     
     @IBAction func cancel(_ sender: Any) {
