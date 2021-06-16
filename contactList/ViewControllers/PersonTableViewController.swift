@@ -8,12 +8,13 @@
 import UIKit
 
 class PersonTableViewController: UITableViewController, UITabBarControllerDelegate {
-    
+    var newPerson: Person?
     var personList = Person.getPersonList()
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.delegate = self
         tableView.rowHeight = 50
+        tableView.tableFooterView = UIView()
     }
 }
 
@@ -76,6 +77,15 @@ extension PersonTableViewController: UITabBarDelegate {
             let person = personList[indexPath.row]
             vc.person = person
         } else { return }
+    }
+    
+    @IBAction func unwindSegueToMainScreen(segue: UIStoryboardSegue) {
+        
+        guard let newPersonVC = segue.source as? NewPersonViewController else { return }
+            newPersonVC.saveNewPerson()
+            personList.append(newPersonVC.newPerson!)
+            tableView.reloadData()
+        
     }
 }
 

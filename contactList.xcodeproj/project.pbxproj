@@ -16,6 +16,7 @@
 		7D8AAB74267252910036ECDA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AAB73267252910036ECDA /* Model.swift */; };
 		7D8AAB7B2672815B0036ECDA /* DetailPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AAB7A2672815B0036ECDA /* DetailPersonViewController.swift */; };
 		7D8AAB8126734FFB0036ECDA /* PersonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AAB8026734FFB0036ECDA /* PersonListViewController.swift */; };
+		7D96EF28267A16F300047653 /* NewPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D96EF27267A16F300047653 /* NewPersonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7D8AAB73267252910036ECDA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7D8AAB7A2672815B0036ECDA /* DetailPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPersonViewController.swift; sourceTree = "<group>"; };
 		7D8AAB8026734FFB0036ECDA /* PersonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewController.swift; sourceTree = "<group>"; };
+		7D96EF27267A16F300047653 /* NewPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewPersonViewController.swift; path = contactList/ViewControllers/NewPersonViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				7D8AAB5D2672521E0036ECDA /* PersonTableViewController.swift */,
 				7D8AAB7A2672815B0036ECDA /* DetailPersonViewController.swift */,
 				7D8AAB8026734FFB0036ECDA /* PersonListViewController.swift */,
+				7D96EF27267A16F300047653 /* NewPersonViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				7D8AAB7B2672815B0036ECDA /* DetailPersonViewController.swift in Sources */,
 				7D8AAB5E2672521E0036ECDA /* PersonTableViewController.swift in Sources */,
 				7D8AAB5A2672521E0036ECDA /* AppDelegate.swift in Sources */,
+				7D96EF28267A16F300047653 /* NewPersonViewController.swift in Sources */,
 				7D8AAB8126734FFB0036ECDA /* PersonListViewController.swift in Sources */,
 				7D8AAB5C2672521E0036ECDA /* SceneDelegate.swift in Sources */,
 				7D8AAB74267252910036ECDA /* Model.swift in Sources */,

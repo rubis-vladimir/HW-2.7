@@ -22,7 +22,7 @@ class DetailPersonViewController: UIViewController {
             "background")
         labelPersonEmail.text = person.email
         labelPersonPhone.text = person.phone
-        personImage.image = UIImage(named: person.photo)
+        personImage.image = UIImage(named: person.photo ?? "")
     }
     
 
