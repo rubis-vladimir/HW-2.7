@@ -8,12 +8,21 @@
 import UIKit
 
 class PersonListViewController: UITableViewController {
+    
     var personList: [Person]!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.tableFooterView = UIView()
+        tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 }
 
 extension PersonListViewController {
-   
-    // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         personList.count
