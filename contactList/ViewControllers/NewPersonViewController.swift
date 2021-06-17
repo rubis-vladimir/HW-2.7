@@ -12,8 +12,7 @@ class NewPersonViewController: UITableViewController {
     var imageIsChanged = false
     var newPerson: Person?
     
-    @IBOutlet weak var saveTapped: UIBarButtonItem!
-    
+    @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     @IBOutlet weak var personName: UITextField!
@@ -35,7 +34,25 @@ class NewPersonViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0 {
+            let actionSheet = UIAlertController(title: nil,
+                                                message: nil,
+                                                preferredStyle: .actionSheet)
             
+            let camera = UIAlertAction(title: "Camera", style: .default) { _ in
+                self.chooseImagePicker(sourse: .camera)
+            }
+            
+            let photo = UIAlertAction(title: "Photo", style: .default) { _ in
+                self.chooseImagePicker(sourse: .photoLibrary)
+            }
+            
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+            
+            actionSheet.addAction(camera)
+            actionSheet.addAction(photo)
+            actionSheet.addAction(cancel)
+            
+            present(actionSheet, animated: true)
         } else {
             view.endEditing(true)
         }
@@ -43,11 +60,19 @@ class NewPersonViewController: UITableViewController {
     
     func saveNewPerson() {
         
-        newPerson = Person(name: personName.text,
+        var image: UIImage?
+        
+        if imageIsChanged {
+            image = personImage.image
+        } else {
+            image = #imageLiteral(resourceName: "Plug")
+        }
+        newPerson = Person(name: personName.text!,
                            surname: personSurname.text,
                            email: personEmail.text,
                            phone: personPhone.text,
-                           photo: "Plug")
+                           image: image,
+                           photo: nil)
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -72,5 +97,31 @@ extension NewPersonViewController: UITextFieldDelegate {
         } else {
             saveButton.isEnabled = false
         }
+    }
+}
+
+// MARK: - Work with Image
+
+extension NewPersonViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func chooseImagePicker(sourse: UIImagePickerController.SourceType) {
+        if UIImagePickerController.isSourceTypeAvailable(sourse) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = sourse
+            present(imagePicker, animated: true)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        personImage.image = info[.editedImage] as? UIImage
+        personImage.contentMode = .scaleAspectFill
+        personImage.clipsToBounds = true
+
+        imageIsChanged = true
+
+        dismiss(animated: true)
     }
 }

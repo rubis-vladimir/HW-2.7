@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailPersonViewController: UIViewController {
-
+    
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var labelPersonEmail: UILabel!
@@ -18,13 +18,18 @@ class DetailPersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImage.image = UIImage(named:
-            "background")
+        backgroundImage.image = UIImage(named: "back3")
         labelPersonEmail.text = person.email
         labelPersonPhone.text = person.phone
-        personImage.image = UIImage(named: person.photo ?? "")
         personImage.layer.borderWidth = 6
+        personImage.layer.borderColor = UIColor.gray.cgColor
+        
+        if person.image == nil {
+            personImage.image = UIImage(named: person.photo ?? "")
+        } else {
+            personImage.image = person.image
+        }
     }
     
-
+    
 }

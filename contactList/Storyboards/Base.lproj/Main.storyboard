@@ -306,11 +306,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="personEmail" destination="dgo-te-tfU" id="uxz-Wz-Fob"/>
+                        <outlet property="personImage" destination="Sa2-aQ-aWF" id="dze-xr-5W5"/>
                         <outlet property="personName" destination="1OE-OO-wiv" id="PHP-CR-Asa"/>
                         <outlet property="personPhone" destination="V1t-dK-nY8" id="zOb-Fc-nX9"/>
                         <outlet property="personSurname" destination="IbP-3d-TOY" id="0df-2O-9an"/>
                         <outlet property="saveButton" destination="hvB-k7-bDi" id="tsG-8m-OHT"/>
-                        <outlet property="saveTapped" destination="hvB-k7-bDi" id="wxd-RN-TSw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Nm-49-YkW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -332,16 +332,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GUB-m7-Vnu">
                                 <rect key="frame" x="30" y="362" width="354" height="84"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rad-FR-HDt">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rad-FR-HDt">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="37"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="27"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" red="0.83529412749999998" green="0.8156862855" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jle-LU-U1a">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jle-LU-U1a">
                                         <rect key="frame" x="0.0" y="47" width="354" height="37"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="27"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" red="0.83529412749999998" green="0.8156862855" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

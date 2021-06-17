@@ -82,9 +82,9 @@ extension PersonTableViewController: UITabBarDelegate {
     @IBAction func unwindSegueToMainScreen(segue: UIStoryboardSegue) {
         
         guard let newPersonVC = segue.source as? NewPersonViewController else { return }
-            newPersonVC.saveNewPerson()
-            personList.append(newPersonVC.newPerson!)
-            tableView.reloadData()
+        newPersonVC.saveNewPerson()
+        personList.append(newPersonVC.newPerson!)
+        tableView.reloadData()
         
     }
 }

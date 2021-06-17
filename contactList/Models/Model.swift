@@ -4,17 +4,18 @@
 //
 //  Created by Владимир Рубис on 10.06.2021.
 //
+import UIKit
 
 struct Person {
-    let name: String?
-    let surname: String?
-    let email: String?
-    let phone: String?
-    let photo: String?
-    
+    var name: String
+    var surname: String?
+    var email: String?
+    var phone: String?
+    var image: UIImage?
+    var photo: String?
     
     var fullname: String {
-        "\(surname!) \(name!)"
+        "\(surname ?? "") \(name)"
     }
 }
 
@@ -54,7 +55,7 @@ extension Person {
                 dataManager.arrayOfPhoto.remove(at: index)
             }
             
-            let newPerson = Person(name: randomName, surname: randomSurname, email: randomEmail, phone: randomPhone, photo: randomPhoto)
+            let newPerson = Person(name: randomName, surname: randomSurname, email: randomEmail, phone: randomPhone, image: nil, photo: randomPhoto)
             personList.append(newPerson)
         }
         return personList
